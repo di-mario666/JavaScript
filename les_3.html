@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Домашнее задание к третьей лекции</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+//С помощью цикла for написать алгоритм для вывода чисел от 0 до 10 включительно
+        for (let i = 0; i < 11; i++) {
+        if (i===0) {console.log("это ноль - " + i);
+        } else if (i % 2 ===0) {console.log("четное - " + i);
+        } else {console.log("нечетное - " + i);}
+        }
+  
+//Выведите в консоль значения, указанные рядом с комментариями:   
+const post = { author: "John", //вывести этот текст 
+               postId: 23, 
+               comments: [ 
+                        {userId: 10, 
+                         userName: "Alex", 
+                         text: "lorem ipsum", 
+                         rating: {likes: 10, 
+                                 dislikes: 2 //вывести это число 
+                                 } 
+                        }, 
+                        {userId: 5, //вывести это число 
+                         userName: "Jane", 
+                         text: "lorem ipsum 2", //вывести этот текст 
+                        rating: {likes: 3,
+                                 dislikes: 1 
+                                } 
+                        }, 
+                        ] 
+                }
+console.log(post.author);
+console.log(post.comments[0].rating.dislikes);        
+console.log(post.comments[1].text);        
+    
+//Перед вами находится массив с продуктами, сегодня распродажа и вам нужно на каждый товар применить скидку 15%, 
+//можете использовать метод forEach https://mzl.la/1AOMMWX : 
+const products = [ 
+    {
+        id: 3, price: 200, 
+    }, 
+    {   
+        id: 4, price: 900, 
+    }, 
+    { 
+        id: 1, price: 1000, 
+    }, 
+    ];
+products.forEach(function(item, index, arr) {
+    console.log('Товары с учетом скидки :' + item.price * 0.15);
+})    
+    
+//Перед вами находится массив с продуктами в интернет-магазине. Вам нужно:
+///1. Получить все товары, у которых есть фотографии, можете использовать метод filter
+const product = [ 
+    { 
+        id: 3, 
+        price: 127, 
+        photos: [ 
+            "1.jpg", 
+            "2.jpg", 
+        ] 
+    }, 
+    { 
+        id: 5, 
+        price: 499, 
+        photos: [] 
+    }, 
+    { 
+        id: 10, 
+        price: 26, 
+        photos: [ "3.jpg" 
+                ] 
+    }, 
+    { 
+        id: 8, 
+        price: 78, 
+    }, 
+];       
+        
+ const product_foto =   product.filter (function(i) {
+     return i.photos != 0 && i.photos != null
+ });       
+console.log(product_foto);
+
+//2. Отсортируйте товары по цене (от низкой цены к высокой), можете использовать метод sort        
+// НЕ РАЗОБРАЛСЯ КАК ДОВЕСТ ДО КОНЦА
+function order(a, b) {
+if (a > b) return 1;
+if (a == b) return 0;
+if (a < b) return -1;
+}
+
+product.sort(order);
+console.log(product.price);
+
+        
+        
+//Нарисовать горку с помощью console.log (используя цикл for), как показано на рисунке,
+//только у вашей горки должно быть 20 рядов                    
+let str = "x"
+console.log(str)
+for(let x = 0; x < 20; x++){
+console.log(str += "xx")
+}          
+        
+    </script>  
+
+</body>
+</html>
